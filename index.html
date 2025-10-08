@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحرمين | Premium Muslim Wear</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS DARI KODE SEBELUMNYA TETAP SAMA (ELEGANT DARK MODE + RTL) */
+        :root {
+            --primary-color: #0d1b2a;
+            --secondary-color: #e0ac59;
+            --text-light: #f1f1f1;
+            --text-dark: #333333;
+            --gap: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            text-align: right;
+        }
+
+        a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--gap) 5%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin-right: var(--gap);
+        }
+        .nav ul li:last-child {
+            margin-right: 0;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.8em;
+            cursor: pointer;
+            padding: 5px;
+            order: -1;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 5%;
+            /* JALUR GAMBAR BARU UNTUK HERO */
+            background: url('hero-black.png') no-repeat left bottom/contain, var(--primary-color); 
+            text-align: right;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #f7d299;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .features {
+            padding: 60px 5%;
+            text-align: center;
+            background-color: #1a2a3b;
+        }
+
+        .features h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: var(--gap);
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            flex-basis: 30%;
+            padding: var(--gap);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            text-align: right;
+            transition: transform 0.3s;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* --- PRODUCT GALLERY --- */
+        .product-gallery {
+            padding: 80px 5%;
+            text-align: center;
+            background-color: var(--primary-color); 
+        }
+
+        .product-gallery h1 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+        }
+        
+        .product-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .produk {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            background: #1a2a3b;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: right;
+        }
+        
+        .produk:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(224, 172, 89, 0.5);
+        }
+
+        .produk img {
+            max-width: 100%;
+            border-radius: 8px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        
+        .produk h3 {
+            margin: 10px 0 5px;
+            color: var(--secondary-color);
+        }
+        
+        .produk p {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+        
+        .produk .buy-button {
+            display: block;
+            padding: 10px 15px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s;
+            margin-top: auto;
+        }
+        
+        .produk .buy-button:hover {
+            background: #f7d299;
+        }
+        
+        /* --- FOOTER --- */
+        .footer {
+            text-align: center;
+            padding: var(--gap);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+            background-color: #0c1a29;
+        }
+
+        /* --- RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav {
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                width: 70%; 
+                background-color: #1a2a3b; 
+                transition: right 0.3s ease-in-out;
+                z-index: 10;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            }
+            .nav.active {
+                right: 0;
+            }
+            .nav ul {
+                flex-direction: column;
+                padding: 20px;
+                align-items: flex-start;
+            }
+            .nav ul li {
+                margin: 10px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 5px;
+            }
+            .nav ul li:last-child {
+                border-bottom: none;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .feature-item {
+                flex-basis: 100%; 
+            }
+            .logo-img {
+                 height: 35px;
+            }
+            .produk {
+                width: 100%;
+            }
+            .hero {
+                background: none;
+                min-height: 50vh;
+                align-items: center; 
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Al-Haramain" class="logo-img">
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle navigation" id="menu-toggle">☰</button>
+        
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#products">Produk</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Premium Muslim Wear</h1>
+        <p>Desain Klasik Bertemu dengan Kualitas Terbaik.</p>
+        <a href="#products" class="cta-button">Lihat Koleksi Kami</a>
+    </section>
+    
+    <section class="features">
+        <h2>Mengapa Memilih Al-Haramain?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>Kualitas Bahan Premium</h3>
+                <p>Kain pilihan yang menjamin kenyamanan dan daya tahan tinggi.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Desain Abadi</h3>
+                <p>Gaya yang tak lekang oleh waktu dengan sentuhan detail modern.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Detail Eksklusif</h3>
+                <p>Kerah dan kancing dirancang untuk menampilkan kesan mewah dan berwibawa.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-gallery" id="products">
+        <h1>Koleksi Baju Koko Al-Haramain</h1>
+        <div class="product-container">
+            
+            <div class="produk">
+                <img src="hero-black.png" alt="Baju Koko Hitam">
+                <h3>Baju Koko Hitam</h3>
+                <p>Elegan & Premium, sempurna untuk acara formal.</p>
+                <a href="https://wa.me/628123456789" class="buy-button">Beli via WhatsApp</a>
+            </div>
+
+            <div class="produk">
+                <img src="produk-putih.png" alt="Baju Koko Putih">
+                <h3>Baju Koko Putih</h3>
+                <p>Simple & Nyaman, pilihan klasik yang wajib dimiliki.</p>
+                <a href="https://wa.me/628123456789" class="buy-button">Beli via WhatsApp</a>
+            </div>
+
+            <div class="produk">
+                <img src="produk-abu.jpg" alt="Baju Koko Abu-abu">
+                <h3>Baju Koko Abu-abu</h3>
+                <p>Modern & Stylish, dengan detail kerah dan kancing eksklusif.</p>
+                <a href="https://wa.me/628123456789" class="buy-button">Beli via WhatsApp</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 الحرمين. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                
+                if (navMenu.classList.contains('active')) {
+                    menuToggle.innerHTML = '✕';
+                } else {
+                    menuToggle.innerHTML = '☰';
+                }
+            });
+
+            const navLinks = document.querySelectorAll('.nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        menuToggle.innerHTML = '☰';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
